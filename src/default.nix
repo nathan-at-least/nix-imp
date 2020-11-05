@@ -8,9 +8,7 @@ let
     assert typeOf dir == "path";
     assert typeOf impSpec == "string";
 
-    if hasPrefix "<" impSpec
-    then import impSpec
-    else if hasPrefix "/" impSpec
+    if hasPrefix "/" impSpec
     then impFrom root root (removePrefix "/" impSpec)
     else impFrom root dir impSpec;
 
